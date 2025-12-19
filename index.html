@@ -1,458 +1,2376 @@
-AUDIT PERFORMANCE DIGITALE
-Diagnostic & Recommandations
-Votre branding est votre force — vos clients sont engagés, votre image est forte. Mais l'exécution digitale disperse les efforts et laisse de l'argent sur la table. Avant de scaler, il faut rationaliser.
-351€
-LTV CLIENT
-93€
-CAC BLENDED
-3,8x
-RATIO LTV/CAC
-0,52%
-CONVERSION FR
-Diagnostic
-›
-Synthèse globale
-01
-Synthèse globale
-3 blocs analysés, 1 fil rouge identifié
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audit Performance Digitale — Martin Martin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --black: #1a1a1a;
+            --white: #ffffff;
+            --cream: #f8f6f3;
+            --gold: #c9a962;
+            --gold-light: #e8dcc4;
+            --red: #c75050;
+            --orange: #d4874d;
+            --green: #5a9a6e;
+            --gray: #6b6b6b;
+            --gray-light: #e5e5e5;
+            --sidebar-width: 280px;
+        }
 
-Performance E-commerce
-Le site ne convertit pas assez, surtout à l'international. Checkout US catastrophique, produits mal exposés.
-Focus : funnel & produits
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-CRM & Klaviyo
-Base engagée (65% ouverture) mais Klaviyo ne génère que 20% du CA. Flows mal structurés, potentiel inexploité.
-Objectif : passer à 30-40%
+        html {
+            scroll-behavior: smooth;
+        }
 
-Acquisition Paid
-Meta fonctionne grâce au branding, malgré une structure bordélique. Google non prioritaire.
-Focus : rationaliser
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--cream);
+            color: var(--black);
+            line-height: 1.6;
+        }
 
-Constat transversal Trop de chantiers sont adressés en parallèle avec un niveau d'exécution et des ressources insuffisants. Focus France d'abord, rationaliser les efforts, puis scaler.
-Diagnostic
-›
-Le stock : fil rouge
+        /* Sidebar Navigation */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: var(--sidebar-width);
+            height: 100vh;
+            background: var(--black);
+            padding: 2rem 0;
+            z-index: 1000;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+        }
 
-FIL ROUGE — IMPACT SUR TOUTES LES ANALYSES
-Le stock insuffisant fausse toutes vos analyses
-Trop d'opérations sont menées sans prendre en compte les niveaux de stock. Des produits sont promus alors qu'ils sont sold out, des campagnes tournent sur du vide.
-Impact Ads
-Publicités qui envoient vers des produits épuisés. Budget dépensé, conversions perdues.
-Impact Analytics
-Des drops de conversion peuvent s'expliquer simplement par des ruptures de stock, pas par un problème de site.
-Impact CRM
-Les flows Back in Stock devraient générer plus — mais la limite de 100 notifications est atteinte sur Vitals.
+        .sidebar-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            color: var(--white);
+            letter-spacing: 2px;
+            padding: 0 1.5rem 0.5rem;
+        }
 
-Recommandation : Assurer la cohérence entre les produits promus et le stock disponible AVANT de lancer toute action marketing.
-Performance E-commerce
-›
-Shopify & CRO
-02
-Shopify & CRO
-Analyse du funnel de conversion et des produits
-E-commerce
-›
-Shopify & CRO
-›
-Métriques clés
-MÉTRIQUES CLÉS
-Une économie unitaire saine, mais serrée
-LTV CLIENT
-351€
-Depuis le lancement
-CAC BLENDED
-92,68€
-Juin - Déc. 2025
-RATIO LTV / CAC
-3,8x
-Seuil sain : 3x
-REPEAT RATE
-24%
-Potentiel : 35%
+        .sidebar-subtitle {
+            font-size: 0.7rem;
+            color: var(--gold);
+            padding: 0 1.5rem 2rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
 
-Ce que ça signifie Le ratio de 3,8x est au-dessus du benchmark (3x) — vous êtes en zone de croissance durable. Mais la marge est serrée : si le CAC monte ou le repeat rate baisse, ça devient tendu. L'enjeu : augmenter la LTV via la rétention et le CRM.
-E-commerce
-›
-Shopify & CRO
-›
-Funnel par marché
-PROBLÈME IDENTIFIÉ
-Le site est une passoire à l'international
-PAYS
-SESSIONS → PANIER
-PANIER → CHECKOUT
-CHECKOUT → ACHAT
-CONVERSION GLOBALE
-France
-1,97%
-56,9%
-46,1%
-0,52%
-États-Unis
-1,55% (-21%)
-41,2% (-28%)
-28,0% (-39%)
-0,18%
-Royaume-Uni
-3,55% (+80%)
-51,9%
-34,3% (-26%)
-0,63%
-Suisse
-3,26% (+65%)
-62,0%
-35,4% (-23%)
-0,72%
-Belgique
-1,55% (-21%)
-46,9% (-18%)
-40,8%
-0,30%
+        .sidebar-nav {
+            flex: 1;
+            padding: 1.5rem 0;
+        }
 
-Focus USA : 72% d'abandon au checkout Les visiteurs US montrent de l'intérêt (ils ajoutent au panier) mais décrochent massivement au moment de payer. Causes probables : frais de douane/taxes non affichés, confusion devise, frais de port élevés, manque de confiance.
-E-commerce
-›
-Shopify & CRO
-›
-Analyse produits
-ANALYSE PRODUITS
-Le trafic est ultra-concentré, des pépites sont invisibles
+        .nav-section {
+            margin-bottom: 0.5rem;
+        }
 
-Concentration du trafic Les 3 premiers produits captent 37% du trafic. Pendant ce temps, 50+ produits ont moins de 10 sessions en 90 jours.
+        .nav-section-title {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--gold);
+            padding: 1rem 1.5rem 0.5rem;
+            font-weight: 600;
+        }
 
-WINNERS — À POUSSER
-Chemise Boy Bleu Carreaux
-2,23% conv.
-Bracelet Coquillage
-2,39% conv.
-Chemise Boy Denim Bleu
-1,77% conv.
-Body Pam Noir
-0,59% (4 719 sessions)
+        .nav-item {
+            display: block;
+            padding: 0.6rem 1.5rem;
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+        }
 
-HIDDEN GEMS — À EXPOSER
-Manteau Denise Noir
-15,8% conv. (19 sessions)
-Pantalon Jim Flower Blanc
-14,3% conv. (7 sessions)
-Robe Lou Ivoire
-2,47% conv. (162 sessions)
+        .nav-item:hover {
+            color: var(--white);
+            background: rgba(255,255,255,0.05);
+        }
 
-À OPTIMISER — FORT TRAFIC, FAIBLE CONVERSION
-Robe Brigitte Cotelé Marine
-0,41% (3 427 sessions)
-Veste Ced Grise
-0,37% (1 894 sessions)
-Jupe Vicky Gris Chiné
-0,40% (1 734 sessions)
+        .nav-item.active {
+            color: var(--white);
+            background: rgba(255,255,255,0.1);
+            border-left-color: var(--gold);
+        }
 
-PARADOXE KLYDE — À INVESTIGUER
-Collection historiquement top revenue
-Mais quasi plus de trafic récent (5-96 sessions). Taux de retour élevés sur certaines variantes. À creuser avec votre connaissance produit.
-E-commerce
-›
-Shopify & CRO
-›
-Recommandations
+        /* Accordion menu */
+        .nav-group {
+            overflow: hidden;
+        }
 
-Recommandations Shopify
-Priorisées par impact et effort
-1
-Stopper/réduire la diffusion hors France
-Tant que le site n'est pas prêt (traductions, checkout, frais). À la limite BE/LU.
-PRIORITÉ
-Haute
-2
-Corriger les traductions EN et les liens morts
-Site bancal en anglais, pages cassées sur la homepage. Freine toute expansion.
-PRIORITÉ
-Haute
-3
-Rationaliser les templates pages produits
-7-8 templates différents, maintenance impossible. Viser 1-2 templates propres max.
-PRIORITÉ
-Haute
-4
-Désactiver l'app de fidélité Loloyal
-30€/mois facturés mais jamais utilisée. Quick win immédiat.
-PRIORITÉ
-Moyenne
-5
-Reprendre le contrôle sur les avis (Trustpilot)
-Note de 2,5/5 visible sur Google. Former les vendeurs boutique, automatiser les demandes d'avis.
-PRIORITÉ
-Moyenne
-6
-Mettre en avant les bijoux/accessoires
-Best-sellers avec forte conversion (bracelets 2,4%). Pousser en homepage et collections.
-PRIORITÉ
-Standard
-CRM & Emailing
-›
-Klaviyo
-03
-Klaviyo
-Un trésor sous-exploité — la base est engagée mais ne convertit pas assez
-Part du CA attribuée à Klaviyo
-Actuel : ~20%
-Objectif : 30-40%
+        .nav-parent {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.6rem 1.5rem;
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+            cursor: pointer;
+        }
 
+        .nav-parent:hover {
+            color: var(--white);
+            background: rgba(255,255,255,0.05);
+        }
 
-0%
-Potentiel de +50% de revenus CRM
-40%
-CRM
-›
-Klaviyo
-›
-Flows automatiques
-À RESTRUCTURER
-14 flows actifs, mal déclenchés, le Welcome ne rapporte rien
-CONSTAT
-Split actuel : 66% newsletters / 33% flows. Le Welcome devrait être un top contributeur mais génère quasi rien — le -10% est envoyé à tout le monde, interférence avec le panier abandonné.
-PROBLÈME
-Flows hors France qui envoient vers des pages mal traduites ou en français. Back in Stock limité à 100 notifications sur Vitals. Aucun A/B testing mené.
-OPPORTUNITÉ
-Avec un branding aussi fort et une base aussi engagée (65% d'ouverture), les flows devraient générer beaucoup plus. C'est le levier le plus rentable.
-RECOMMANDATIONS PRIORITAIRES
-1
-Revoir les triggers du Welcome
-Ne pas envoyer -10% à tous les inscrits. Splitter : un flow avec code (pop-up) / un sans (autres sources).
-2
-Passer Back in Stock sur Klaviyo
-Plus de flexibilité, plus de contrôle, possibilité d'opt-in newsletter dans le formulaire.
-3
-Ajouter un flow Customer Win-back
-Avec incentive pour réactiver les clients dormants. Ajouter aussi un flow "Désengagés" pour cleaner la base.
-CRM
-›
-Klaviyo
-›
-Newsletters
-POINT FORT
-Taux d'ouverture excellents — le problème est ailleurs
-TAUX D'OUVERTURE
-~65%
-Excellent
-TAUX DE CLIC
-Élevé
-Base engagée
-CONVERSIONS
-Faibles
-Problème = site
+        .nav-parent.active {
+            color: var(--white);
+            background: rgba(255,255,255,0.1);
+            border-left-color: var(--gold);
+        }
 
-Diagnostic Les gens ouvrent, cliquent, mais n'achètent pas. Le branding fait son travail, les newsletters sont bien construites — le problème est sur le site qui ne convertit pas ces visiteurs engagés.
+        .nav-parent-arrow {
+            width: 8px;
+            height: 8px;
+            border-right: 2px solid rgba(255,255,255,0.4);
+            border-bottom: 2px solid rgba(255,255,255,0.4);
+            transform: rotate(-45deg);
+            transition: transform 0.3s ease;
+        }
 
-Process trop lourd Actuellement, 3 newsletters différentes sont envoyées par campagne (FR, EU, UK/US). C'est trop lourd à maintenir. Klaviyo permet la traduction automatique — une seule newsletter, traduite à la volée selon la langue du contact.
-CRM
-›
-Klaviyo
-›
-Acquisition CRM
-À CORRIGER
-Des sources d'inscription cassées ou sous-optimisées
-PROBLÈMES IDENTIFIÉS
-Footer newsletter invisible
-Le formulaire est actif sur Klaviyo mais n'apparaît plus sur le site.
-Pop-up -10% timide
-Pas de teaser pour le rouvrir après fermeture. Pas centré, pas d'image forte.
-Back in Stock externe
-Géré via Vitals (limite 100), pas d'opt-in newsletter possible.
-RECOMMANDATIONS
-1
-Réactiver le formulaire footer
-Quick win immédiat, source d'inscription passive.
-2
-Améliorer le pop-up -10%
-Ajouter un teaser, centrer, mettre une belle image.
-3
-Passer Back in Stock sur Klaviyo
-Avec case opt-in newsletter dans le formulaire.
-CRM
-›
-Klaviyo
-›
-Base client
-À ASSAINIR
-14 listes, des segments pour l'Ads mélangés — difficile à lire
-CONTACTS ACTIFS
-~6 000
-Base quali
-LISTES DIFFÉRENTES
-14
-Trop, mal organisées
-QUALITÉ
-Bonne
-Taux d'engagement élevé
-ACTIONS DE NETTOYAGE
-1
-Cleaner et archiver les listes/segments inutilisés
-Remettre de l'ordre, supprimer ce qui ne sert plus.
-2
-Créer une liste "à exclure"
-Bounces, spam, unsub, désengagés — pour ne plus leur envoyer.
-3
-Splitter les sources d'inscription
-Pop-up, footer, checkout — pour savoir ce qui fonctionne.
-4
-Désactiver les contacts désengagés
-Réduire la facturation Klaviyo (facturé par contact actif).
-Acquisition Paid
-›
-Google Ads
-POSITION
-Google Ads : pas prioritaire
-SITUATION ACTUELLE
-Pas de campagne active. Les campagnes précédentes avaient de bons résultats, mais ce n'est pas la priorité aujourd'hui.
-POURQUOI ATTENDRE
-Stock insuffisant, site pas prêt. Les résultats organiques (SEO) sont suffisants — peu de concurrence sur "Martin Martin Paris".
-À ENVISAGER PLUS TARD
-Performance Max France pour tester Google Shopping. Brand + Brand générique (robes, chemises) — mais après avoir stabilisé le site.
+        .nav-group.expanded .nav-parent-arrow {
+            transform: rotate(45deg);
+        }
 
-Logique du CAC blended Même si un canal a un bon ROAS, ça ne veut pas dire qu'il faut l'activer. Si les gens vous auraient trouvé organiquement de toute façon, activer Google Ads augmente votre CAC sans augmenter vos conversions. C'est le piège de l'attribution.
-Acquisition Paid
-›
-Meta Ads
-04
-Meta Ads
-Ça fonctionne grâce au branding — mais la structure est bordélique
-Acquisition
-›
-Meta Ads
-›
-Structure actuelle
-RISQUE IDENTIFIÉ
-Des résultats corrects malgré une structure illisible
-CE QU'ON OBSERVE
-Beaucoup de trafic vient de Meta, stats globalement bonnes. Mais la structure est un foutoir : pas de nomenclature, campagnes difficiles à lire pour un externe.
-LE RISQUE
-Dépendance à une personne. Si le freelance part ou si quelqu'un doit reprendre, c'est impossible à comprendre. Pas d'optimisation possible sans lisibilité.
-NOTRE INTERPRÉTATION
-Les résultats viennent du branding fort de la marque, pas de la structure des campagnes. Avec une meilleure organisation, les stats pourraient être encore meilleures.
+        .nav-children {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
 
-Problème de nomenclature Les campagnes ont des noms comme "COLD_SUILUX", "Shopping ADV+ FR CBO", etc. Impossible de comprendre rapidement l'objectif, l'audience, le type de campagne. Une nomenclature claire (Objectif_Audience_Type_Pays) est indispensable.
-Acquisition
-›
-Meta Ads
-›
-Ce qui fonctionne
-BEST PERFORMERS
-DPA + UGC = la combinaison gagnante
-🛒
-DPA (Carousels auto)
-Les 3-4 meilleures pubs sont des DPA. Pas d'effort créa, les packshots lifestyle font le travail.
-Top performer
-📸
-Photos lifestyle
-Vicky jupe back to work, chemise boy, Robe Brigitte. Des photos inspirées qui montrent le produit porté.
-Forte conversion
-🎬
-Vidéos UGC
-Capucine devant son miroir, vidéo ascenseur. Authentique, on ne voit pas que c'est de la pub.
-Engagement élevé
+        .nav-group.expanded .nav-children {
+            max-height: 500px;
+        }
 
-À continuer Les shootings lifestyle actuels alimentent parfaitement les DPA. Continuer les vidéos UGC style Capucine. Tester des GIF/motion design pour diversifier les formats.
-Acquisition
-›
-Meta Ads
-›
-Recommandations
+        .nav-child {
+            display: block;
+            padding: 0.5rem 1.5rem 0.5rem 2.5rem;
+            color: rgba(255,255,255,0.5);
+            text-decoration: none;
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+        }
 
-Recommandations Meta
-Rationaliser et sécuriser
-1
-Stopper la diffusion hors France
-Tant que le site n'est pas prêt. À la limite BE/LU. Les campagnes UK/US envoient vers un site bancal.
-PRIORITÉ
-Haute
-2
-Mettre en place une nomenclature claire
-Objectif_Audience_Type_Pays pour chaque campagne/adset/ad. Indispensable pour la lisibilité et la reprise.
-PRIORITÉ
-Haute
-3
-Tester la désactivation du retargeting
-Ces gens auraient peut-être converti sans pub. Mesurer l'impact réel sur le CAC blended.
-PRIORITÉ
-Moyenne
-4
-Assurer la cohérence pub ↔ stock
-Ne pas promouvoir des produits sold out. Vérifier avant chaque lancement de campagne.
-PRIORITÉ
-Moyenne
-5
-Arbitrer les adsets avec ROAS faible
-Certains ensembles de publicités sous-performent. Les identifier et couper ou réallouer.
-PRIORITÉ
-Standard
-Plan d'action
-›
-Quick wins
+        .nav-child:hover {
+            color: var(--white);
+            background: rgba(255,255,255,0.05);
+        }
 
-Quick Wins
-Actions immédiates — Impact rapide, effort faible
-1
-Désactiver l'app de fidélité Loloyal
-30€/mois économisés immédiatement. Non utilisée.
-SUJET
-Shopify
-2
-Réactiver le formulaire newsletter footer
-Actif sur Klaviyo mais invisible sur le site. 5 minutes de fix.
-SUJET
-Klaviyo
-3
-Stopper les campagnes hors France
-Sur Meta notamment. Budget économisé, meilleur ROAS global.
-SUJET
-Meta
-4
-Corriger le sélecteur langue/currency en double
-Bug visuel, mauvaise expérience utilisateur. Supprimer le doublon.
-SUJET
-Shopify
-5
-Réactiver le clic droit sur le site
-Frustrant pour les utilisateurs, pas de protection réelle. À enlever.
-SUJET
-Shopify
-Plan d'action
-›
-Chantiers structurants
+        .nav-child.active {
+            color: var(--white);
+            border-left-color: var(--gold);
+        }
 
-Chantiers structurants
-1-3 mois — Impact fort, effort moyen à élevé
-1
-Refonte des traductions EN + correction liens morts
-Préalable indispensable à toute expansion internationale.
-SUJET
-Shopify
-2
-Rationaliser les templates pages produits
-Passer de 7-8 à 1-2 templates propres. Facilite la maintenance.
-SUJET
-Shopify
-3
-Restructurer les flows Klaviyo
-Welcome, Panier abandonné, Back in Stock sur Klaviyo. Objectif : +50% de revenus CRM.
-SUJET
-Klaviyo
-4
-Cleaner et réorganiser la base Klaviyo
-Archiver les listes inutiles, splitter les sources, exclure les désengagés.
-SUJET
-Klaviyo
-5
-Mettre en place une nomenclature Meta
-Et restructurer les campagnes pour lisibilité et reprenabilité.
-SUJET
-Meta
-6
-Formation équipe à Sidekick (IA Shopify)
-Outil auquel ils ont accès. Permet de faire leurs propres analyses.
-SUJET
-Formation
-"Le branding de Martin Martin est votre meilleur atout. Vos clients sont engagés, votre image est forte.  Mais l'exécution digitale disperse les efforts. Trop de pays, trop de flows, pas assez de stock, pas assez de structure.  La priorité : rationaliser avant de scaler. Focus France, site solide, CRM qui convertit. Ensuite seulement, vous pourrez accélérer."
-PROCHAINE ÉTAPE : DÉFINIR LES PRIORITÉS ENSEMBLE
-↑ ↓ naviguer
+        /* Progress indicator */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: var(--sidebar-width);
+            right: 0;
+            height: 3px;
+            background: var(--gray-light);
+            z-index: 999;
+        }
 
+        .progress-fill {
+            height: 100%;
+            background: var(--gold);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        /* Main content */
+        .main-content {
+            margin-left: var(--sidebar-width);
+        }
+
+        /* Slides */
+        .slide {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 4rem 6rem;
+            position: relative;
+        }
+
+        .slide-dark {
+            background: linear-gradient(135deg, var(--black) 0%, #2d2d2d 100%);
+            color: var(--white);
+        }
+
+        .slide-white {
+            background: var(--white);
+        }
+
+        .slide-cream {
+            background: var(--cream);
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            position: absolute;
+            top: 2rem;
+            left: 6rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.8rem;
+        }
+
+        .breadcrumb-item {
+            color: var(--gray);
+            opacity: 0.7;
+        }
+
+        .slide-dark .breadcrumb-item {
+            color: rgba(255,255,255,0.5);
+        }
+
+        .breadcrumb-separator {
+            color: var(--gold);
+            font-weight: 300;
+        }
+
+        .breadcrumb-current {
+            color: var(--gold);
+            font-weight: 500;
+        }
+
+        /* Hero slide */
+        .hero-slide {
+            text-align: center;
+            padding: 4rem;
+        }
+
+        .hero-subtitle {
+            font-size: 0.9rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 2rem;
+        }
+
+        .hero-slide h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-accroche {
+            max-width: 750px;
+            margin: 0 auto 3rem;
+            font-size: 1.15rem;
+            font-weight: 300;
+            opacity: 0.9;
+            line-height: 1.8;
+        }
+
+        .hero-accroche strong {
+            color: var(--gold);
+            font-weight: 500;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            margin-top: 2rem;
+        }
+
+        .hero-stat {
+            text-align: center;
+        }
+
+        .hero-stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--gold);
+        }
+
+        .hero-stat-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.7;
+            margin-top: 0.3rem;
+        }
+
+        /* Slide header */
+        .slide-header {
+            margin-bottom: 3rem;
+        }
+
+        .slide-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            color: var(--gold);
+            opacity: 0.3;
+            line-height: 1;
+        }
+
+        .slide-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 400;
+            margin-top: -1rem;
+        }
+
+        .slide-subtitle {
+            color: var(--gray);
+            margin-top: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* Bloc overview slide */
+        .bloc-overview {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .bloc-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .bloc-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .bloc-card-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        .bloc-card-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: white;
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .bloc-card-icon.ecommerce { background: var(--red); }
+        .bloc-card-icon.crm { background: var(--orange); }
+        .bloc-card-icon.acquisition { background: var(--gray); }
+
+        .bloc-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .bloc-card p {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        .bloc-card-count {
+            margin-top: 1rem;
+            font-size: 0.8rem;
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        /* Metrics cards */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .metric-card {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        .metric-card-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--gray);
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-card-value {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--black);
+        }
+
+        .metric-card-context {
+            font-size: 0.8rem;
+            color: var(--gray);
+            margin-top: 0.3rem;
+        }
+
+        .metric-card-value.positive { color: var(--green); }
+        .metric-card-value.negative { color: var(--red); }
+        .metric-card-value.warning { color: var(--orange); }
+
+        /* Constat card (full slide) */
+        .constat-full {
+            max-width: 1000px;
+        }
+
+        .constat-badge {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+        }
+
+        .constat-badge.critical { background: var(--red); color: white; }
+        .constat-badge.major { background: var(--orange); color: white; }
+        .constat-badge.structural { background: var(--gray); color: white; }
+        .constat-badge.insight { background: var(--gold); color: white; }
+
+        .constat-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            line-height: 1.3;
+        }
+
+        .constat-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .constat-item {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+
+        .constat-item-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .constat-item-value {
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Funnel table */
+        .funnel-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+
+        .funnel-table th,
+        .funnel-table td {
+            padding: 1rem 1.5rem;
+            text-align: left;
+            border-bottom: 1px solid var(--gray-light);
+        }
+
+        .funnel-table th {
+            background: var(--cream);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--gray);
+            font-weight: 600;
+        }
+
+        .funnel-table td {
+            font-size: 0.9rem;
+        }
+
+        .funnel-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .funnel-table .country {
+            font-weight: 600;
+        }
+
+        .funnel-table .good { color: var(--green); font-weight: 600; }
+        .funnel-table .bad { color: var(--red); font-weight: 600; }
+        .funnel-table .warning { color: var(--orange); font-weight: 600; }
+
+        .funnel-bar {
+            height: 8px;
+            background: var(--gray-light);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 0.3rem;
+        }
+
+        .funnel-bar-fill {
+            height: 100%;
+            border-radius: 4px;
+        }
+
+        .funnel-bar-fill.good { background: var(--green); }
+        .funnel-bar-fill.bad { background: var(--red); }
+        .funnel-bar-fill.warning { background: var(--orange); }
+        .funnel-bar-fill.neutral { background: var(--gold); }
+
+        /* Product cards */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .product-section {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+
+        .product-section h4 {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .product-section h4 .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .product-section h4 .dot.green { background: var(--green); }
+        .product-section h4 .dot.gold { background: var(--gold); }
+        .product-section h4 .dot.orange { background: var(--orange); }
+        .product-section h4 .dot.gray { background: var(--gray); }
+
+        .product-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid var(--gray-light);
+        }
+
+        .product-item:last-child {
+            border-bottom: none;
+        }
+
+        .product-name {
+            font-size: 0.9rem;
+        }
+
+        .product-stat {
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .product-stat.good { color: var(--green); }
+        .product-stat.warning { color: var(--orange); }
+
+        /* Attention box */
+        .attention-slide {
+            background: linear-gradient(135deg, #2d2d2d 0%, var(--black) 100%);
+            color: var(--white);
+        }
+
+        .attention-content {
+            max-width: 900px;
+        }
+
+        .attention-icon-big {
+            width: 64px;
+            height: 64px;
+            border: 2px solid var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .attention-icon-big svg {
+            width: 32px;
+            height: 32px;
+            stroke: var(--gold);
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .attention-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .attention-title-big {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .attention-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .attention-item {
+            background: rgba(255,255,255,0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .attention-item h4 {
+            color: var(--gold);
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .attention-item p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Gauge / Progress */
+        .gauge-container {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            margin: 2rem 0;
+        }
+
+        .gauge-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .gauge-title {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .gauge-values {
+            display: flex;
+            gap: 2rem;
+            font-size: 0.85rem;
+        }
+
+        .gauge-current {
+            color: var(--orange);
+            font-weight: 600;
+        }
+
+        .gauge-target {
+            color: var(--green);
+        }
+
+        .gauge-bar {
+            height: 16px;
+            background: var(--gray-light);
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .gauge-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--orange), var(--gold));
+            border-radius: 8px;
+        }
+
+        .gauge-target-marker {
+            position: absolute;
+            top: -5px;
+            bottom: -5px;
+            width: 3px;
+            background: var(--green);
+            border-radius: 2px;
+        }
+
+        .gauge-legend {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 0.5rem;
+            font-size: 0.75rem;
+            color: var(--gray);
+        }
+
+        /* Recommendations */
+        .reco-phase-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .reco-phase-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 16px;
+            background: var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .reco-phase-icon svg {
+            width: 28px;
+            height: 28px;
+            stroke: white;
+            stroke-width: 1.5;
+            fill: none;
+        }
+
+        .reco-phase-info h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+        }
+
+        .reco-phase-info p {
+            color: var(--gray);
+        }
+
+        .reco-list {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .reco-item {
+            background: var(--white);
+            padding: 1.5rem 2rem;
+            border-radius: 12px;
+            display: grid;
+            grid-template-columns: auto 1fr auto auto;
+            align-items: center;
+            gap: 1.5rem;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+        }
+
+        .reco-number {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--cream);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--black);
+        }
+
+        .reco-content h4 {
+            font-size: 1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .reco-content p {
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        .reco-metric {
+            text-align: center;
+            padding: 0 0.5rem;
+        }
+
+        .reco-metric-label {
+            font-size: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--gray);
+            margin-bottom: 0.3rem;
+        }
+
+        .reco-metric-value {
+            color: var(--gold);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        /* Priority badges */
+        .priority-badge {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 0.5rem;
+        }
+
+        .priority-badge.high { background: var(--red); }
+        .priority-badge.medium { background: var(--orange); }
+        .priority-badge.low { background: var(--gold); }
+
+        /* Info box */
+        .info-box {
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+        }
+
+        .info-box.warning {
+            background: var(--cream);
+            border-left: 4px solid var(--orange);
+        }
+
+        .info-box.critical {
+            background: #fdf2f2;
+            border-left: 4px solid var(--red);
+        }
+
+        .info-box.success {
+            background: #f0fdf4;
+            border-left: 4px solid var(--green);
+        }
+
+        .info-box.insight {
+            background: var(--white);
+            border-left: 4px solid var(--gold);
+        }
+
+        .info-box-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .info-box-title svg {
+            width: 18px;
+            height: 18px;
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .info-box.warning .info-box-title svg { stroke: var(--orange); }
+        .info-box.critical .info-box-title svg { stroke: var(--red); }
+        .info-box.success .info-box-title svg { stroke: var(--green); }
+        .info-box.insight .info-box-title svg { stroke: var(--gold); }
+
+        /* Best ads gallery */
+        .ads-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .ads-card {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        .ads-card-icon {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 1rem;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .ads-card-icon.dpa { background: #e8f4fc; }
+        .ads-card-icon.photo { background: #fef3e8; }
+        .ads-card-icon.video { background: #f3e8fe; }
+
+        .ads-card h4 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .ads-card p {
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        .ads-card-tag {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.3rem 0.8rem;
+            background: var(--cream);
+            border-radius: 20px;
+            font-size: 0.75rem;
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        /* Two column layout */
+        .two-columns {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        /* Closing slide */
+        .closing-slide {
+            text-align: center;
+        }
+
+        .closing-quote {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            line-height: 1.8;
+            color: rgba(255,255,255,0.9);
+        }
+
+        .closing-quote em {
+            color: var(--gold);
+            font-style: normal;
+        }
+
+        .closing-cta {
+            font-size: 0.9rem;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Keyboard hint */
+        .keyboard-hint {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 0.8rem 1.2rem;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            z-index: 100;
+        }
+
+        .keyboard-hint kbd {
+            background: rgba(255,255,255,0.2);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .sidebar {
+                width: 240px;
+            }
+            :root {
+                --sidebar-width: 240px;
+            }
+            .slide {
+                padding: 3rem 4rem;
+            }
+            .breadcrumb {
+                left: 4rem;
+            }
+            .metrics-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 900px) {
+            .sidebar {
+                display: none;
+            }
+            :root {
+                --sidebar-width: 0px;
+            }
+            .constat-grid,
+            .bloc-overview,
+            .attention-grid,
+            .products-grid,
+            .two-columns,
+            .ads-gallery {
+                grid-template-columns: 1fr;
+            }
+            .metrics-grid {
+                grid-template-columns: 1fr;
+            }
+            .reco-item {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .breadcrumb {
+                left: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-logo">MARTIN MARTIN</div>
+        <div class="sidebar-subtitle">Audit Performance Digitale</div>
+        <nav class="sidebar-nav">
+            <div class="nav-section">
+                <a href="#intro" class="nav-item">Introduction</a>
+                <a href="#overview" class="nav-item">Synthèse globale</a>
+                <a href="#stock" class="nav-item">Le stock : fil rouge</a>
+            </div>
+            
+            <div class="nav-section">
+                <div class="nav-section-title">Performance E-commerce</div>
+                
+                <div class="nav-group" data-group="shopify">
+                    <div class="nav-parent" onclick="toggleNavGroup('shopify')">
+                        <span>Shopify & CRO</span>
+                        <span class="nav-parent-arrow"></span>
+                    </div>
+                    <div class="nav-children">
+                        <a href="#shopify-metrics" class="nav-child">Métriques clés</a>
+                        <a href="#shopify-funnel" class="nav-child">Funnel par marché</a>
+                        <a href="#shopify-produits" class="nav-child">Analyse produits</a>
+                        <a href="#shopify-reco" class="nav-child">Recommandations</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="nav-section">
+                <div class="nav-section-title">CRM & Emailing</div>
+                
+                <div class="nav-group" data-group="klaviyo">
+                    <div class="nav-parent" onclick="toggleNavGroup('klaviyo')">
+                        <span>Klaviyo</span>
+                        <span class="nav-parent-arrow"></span>
+                    </div>
+                    <div class="nav-children">
+                        <a href="#klaviyo-flows" class="nav-child">Flows automatiques</a>
+                        <a href="#klaviyo-nl" class="nav-child">Newsletters</a>
+                        <a href="#klaviyo-acquisition" class="nav-child">Acquisition CRM</a>
+                        <a href="#klaviyo-base" class="nav-child">Base client</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="nav-section">
+                <div class="nav-section-title">Acquisition Paid</div>
+                <a href="#google" class="nav-item">Google Ads</a>
+                <div class="nav-group" data-group="meta">
+                    <div class="nav-parent" onclick="toggleNavGroup('meta')">
+                        <span>Meta Ads</span>
+                        <span class="nav-parent-arrow"></span>
+                    </div>
+                    <div class="nav-children">
+                        <a href="#meta-structure" class="nav-child">Structure actuelle</a>
+                        <a href="#meta-best" class="nav-child">Ce qui fonctionne</a>
+                        <a href="#meta-reco" class="nav-child">Recommandations</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="nav-section">
+                <div class="nav-section-title">Plan d'action</div>
+                <a href="#quickwins" class="nav-item">Quick wins</a>
+                <a href="#structurant" class="nav-item">Chantiers structurants</a>
+                <a href="#closing" class="nav-item">Conclusion</a>
+            </div>
+        </nav>
+    </aside>
+
+    <!-- Progress bar -->
+    <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <!-- Main content -->
+    <main class="main-content">
+        
+        <!-- INTRO -->
+        <section id="intro" class="slide slide-dark hero-slide" data-section="Introduction">
+            <div class="hero-subtitle">Audit Performance Digitale</div>
+            <h1>Diagnostic &<br>Recommandations</h1>
+            <p class="hero-accroche">
+                Votre branding est votre force — vos clients sont engagés, votre image est forte.
+                Mais l'exécution digitale <strong>disperse les efforts</strong> et laisse de l'argent sur la table.
+                Avant de scaler, il faut <strong>rationaliser</strong>.
+            </p>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="hero-stat-number">351€</div>
+                    <div class="hero-stat-label">LTV client</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">93€</div>
+                    <div class="hero-stat-label">CAC blended</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">3,8x</div>
+                    <div class="hero-stat-label">Ratio LTV/CAC</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">0,52%</div>
+                    <div class="hero-stat-label">Conversion FR</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- OVERVIEW -->
+        <section id="overview" class="slide slide-cream" data-section="Synthèse">
+            <div class="breadcrumb">
+                <span class="breadcrumb-item">Diagnostic</span>
+                <span class="breadcrumb-separator">›</span>
+                <span class="breadcrumb-current">Synthèse globale</span>
+            </div>
+            
+            <div class="slide-header">
+                <div class="slide-number">01</div>
+                <h1 class="slide-title">Synthèse globale</h1>
+                <p class="slide-subtitle">3 blocs analysés, 1 fil rouge identifié</p>
+            </div>
+            
+            <div class="bloc-overview">
+                <div class="bloc-card">
+                    <div class="bloc-card-icon ecommerce">
+                        <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                    </div>
+                    <h3>Performance E-commerce</h3>
+                    <p>Le site ne convertit pas assez, surtout à l'international. Checkout US catastrophique, produits mal exposés.</p>
+                    <div class="bloc-card-count">Focus : funnel & produits</div>
+                </div>
+                <div class="bloc-card">
+                    <div class="bloc-card-icon crm">
+                        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    </div>
+                    <h3>CRM & Klaviyo</h3>
+                    <p>Base engagée (65% ouverture) mais Klaviyo ne génère que 20% du CA. Flows mal structurés, potentiel inexploité.</p>
+                    <div class="bloc-card-count">Objectif : passer à 30-40%</div>
+                </div>
+                <div class="bloc-card">
+                    <div class="bloc-card-icon acquisition">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+                    </div>
+                    <h3>Acquisition Paid</h3>
+                    <p>Meta fonctionne grâce au branding, malgré une structure bordélique. Google non prioritaire.</p>
+                    <div class="bloc-card-count">Focus : rationaliser</div>
+                </div>
+            </div>
+            
+            <div class="info-box critical" style="margin-top: 2rem;">
+                <div class="info-box-title">
+                    <svg viewBox="0 0 24 24"><path d="M12 9v4M12 17h.01M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>
+                    Constat transversal
+                </div>
+                <span style="color: var(--gray);">Trop de chantiers sont adressés en parallèle avec un niveau d'exécution et des ressources insuffisants. Focus France d'abord, rationaliser les efforts, puis scaler.</span>
+            </div>
+        </section>
+
+        <!-- STOCK - FIL ROUGE -->
+        <section id="stock" class="slide attention-slide" data-section="Fil rouge">
+            <div class="breadcrumb">
+                <span class="breadcrumb-item">Diagnostic</span>
+                <span class="breadcrumb-separator">›</span>
+                <span class="breadcrumb-current">Le stock : fil rouge</span>
+            </div>
+            
+            <div class="attention-content">
+                <div class="attention-icon-big">
+                    <svg viewBox="0 0 24 24"><path d="M12 9v4M12 17h.01M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>
+                </div>
+                <div class="attention-label">Fil rouge — Impact sur toutes les analyses</div>
+                <h2 class="attention-title-big">Le stock insuffisant fausse toutes vos analyses</h2>
+                <p style="opacity: 0.8; font-size: 1.1rem; margin-bottom: 2rem;">Trop d'opérations sont menées sans prendre en compte les niveaux de stock. Des produits sont promus alors qu'ils sont sold out, des campagnes tournent sur du vide.</p>
+                
+                <div class="attention-grid">
+                    <div class="attention-item">
+                        <h4>Impact Ads</h4>
+                        <p>Publicités qui envoient vers des produits épuisés. Budget dépensé, conversions perdues.</p>
+                    </div>
+                    <div class="attention-item">
+                        <h4>Impact Analytics</h4>
+                        <p>Des drops de conversion peuvent s'expliquer simplement par des ruptures de stock, pas par un problème de site.</p>
+                    </div>
+                    <div class="attention-item">
+                        <h4>Impact CRM</h4>
+                        <p>Les flows Back in Stock devraient générer plus — mais la limite de 100 notifications est atteinte sur Vitals.</p>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 2rem; padding: 1rem 1.5rem; background: rgba(90, 154, 110, 0.2); border-radius: 8px; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;">
+                    <svg viewBox="0 0 24 24" style="width: 20px; height: 20px; stroke: var(--green); stroke-width: 2.5; fill: none;"><polyline points="20 6 9 17 4 12"/></svg>
+                    Recommandation : Assurer la cohérence entre les produits promus et le stock disponible AVANT de lancer toute action marketing.
+                </div>
+            </div>
+        </section>
+
+        <!-- SHOPIFY HEADER -->
+        <section id="shopify" class="slide slide-dark" data-section="E-commerce" data-group="shopify">
+            <div class="breadcrumb">
+                <span class="breadcrumb-item">Performance E-commerce</span>
+                <span class="breadcrumb-separator">›</span>
+                <span class="breadcrumb-current">Shopify & CRO</span>
+            </div>
+            
+            <div class="slide-header">
+                <div class="slide-number">02</div>
+                <h1 class="slide-title">Shopify & CRO</h1>
+                <p class="slide-subtitle" style="color: rgba(255,255,255,0.7);">Analyse du funnel de conversion et des produits</p>
+            </div>
+        </section>
+
+        <!-- SHOPIFY METRICS -->
+        <section id="shopify-metrics" class="slide slide-cream" data-section="E-commerce" data-group="shopify">
+            <div class="breadcrumb">
+                <span class="breadcrumb-item">E-commerce</span>
+                <span class="breadcrumb-separator">›</span>
+                <span class="breadcrumb-item">Shopify & CRO</span>
+                <span class="breadcrumb-separator">›</span>
+                <span class="breadcrumb-current">Métriques clés</span>
+            </div>
+            
+            <div class="constat-full">
+                <span class="constat-badge insight">Métriques clés</span>
+                <h2 class="constat-title">Une économie unitaire saine, mais serrée</h2>
+                
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-card-label">LTV client</div>
+                        <div class="metric-card-value">351€</div>
+                        <div class="metric-card-context">Depuis le lancement</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-card-label">CAC blended</div>
+                        <div class="metric-card-value">92,68€</div>
+                        <div class="metric-card-context">Juin - Déc. 2025</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-card-label">Ratio LTV / CAC</div>
+                        <div class="metric-card-value positive">3,8x</div>
+                        <div class="metric-card-context">Seuil sain : 3x</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-card-label">Repeat rate</div>
+                        <div class="metric-card-value warning">24%</div>
+                        <div class="metric-card-context">Potentiel : 35%</div>
+                    </div>
+                </div>
+                
+                <div class="info-box insight">
+                    <div class="info-box-title">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                        Ce que ça signifie
+                    </div>
+                    <span style="color: var(--gray);">Le ratio de 3,8x est au-dessus du benchmark (3x) — vous êtes en zone de croissance durable. Mais la marge est serrée : si le CAC monte ou le repeat rate baisse, ça devient tendu. L'enjeu : augmenter la LTV via la rétention et le CRM.</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- SHOPIFY FUNNEL -->
+        <section id="shopify-funnel" class="slide slide-white" data-section="E-commerce" data-group="shopify">
+            <div class="breadcrumb">
+                <span class="breadcrumb-item">E-commerce</span>
+                <span class="breadcrumb-separator">›</span>
+                <span class="breadcrumb-item">Shopify & CRO</span>
+                <span class="breadcrumb-separator">›</span>
+                <span class="breadcrumb-current">Funnel par marché</span>
+            </div>
+            
+            <div class="constat-full">
+                <span class="constat-badge critical">Problème identifié</span>
+                <h2 class="constat-title">Le site est une passoire à l'international</h2>
+                
+                <table class="funnel-table">
+                    <thead>
+                        <tr>
+                            <th>Pays</th>
+                            <th>Sessions → Panier</th>
+                            <th>Panier → Checkout</th>
+                            <th>Checkout → Achat</th>
+                            <th>Conversion globale</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="country">France</td>
+                            <td>1,97%</td>
+                            <td>56,9%</td>
+                            <td>46,1%</td>
+                            <td><strong>0,52%</strong></td>
+                        </tr>
+                        <tr>
+                            <td class="country">États-Unis</td>
+                            <td class="warning">1,55% <small>(-21%)</small></td>
+                            <td class="bad">41,2% <small>(-28%)</small></td>
+                            <td class="bad">28,0% <small>(-39%)</small></td>
+                            <td class="bad"><strong>0,18%</strong></td>
+                        </tr>
+                        <tr>
+                            <td class="country">Royaume-Uni</td>
+                            <td class="good">3,55% <small>(+80%)</small></td>
+                            <td>51,9%</td>
+                            <td class="warning">34,3% <small>(-26%)</small></td>
+                            <td><strong>0,63%</strong></td>
+                        </tr>
+                        <tr>
+                            <td class="country">Suisse</td>
+                            <td class="good">3,26% <small>(+65%)</small></td>
+                            <td class="good">62,0%</td>
+                            <td class="warning">35,4% <small>(-23%)</small></td>
+                            <td><strong>0,72%</strong></td>
+                        </tr>
+                        <tr>
+                            <td class="country">Belgique</td>
+                            <td class="warning">1,55% <small>(-21%)</small></td>
+                            <td class="warning">46,9% <small>(-18%)</small></td>
+                            <td>40,8%</td>
+                            <td class="warning"><strong>0,30%</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="info-box critical">
+                    <div class="info-box-title">
+                        <svg viewBox="0 0 24 24"><path d="M12 9v4M12 17h.01M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>
+                        Focus USA : 72% d'abandon au checkout
+                    </div>
+                    <span style="color: var(--gray);">Les visiteurs US montrent de l'intérêt (ils ajoutent au panier) mais décrochent massivement au moment de payer. Causes probables : frais de douane/taxes non affichés, confusion devise, frais de port élevés, manque de confiance.</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- SHOPIFY PRODUITS -->
+        <section id="shopify-produits" class="slide slide-cream" data-section="E-commerce" data-group="shopify">
+            <div class="breadcrumb">
+                <span class="breadcrumb-item">E-commerce</span>
+                <span class="breadcrumb-separator">›</span>
+                <span class="breadcrumb-item">Shopify & CRO</span>
+                <span class="breadcrumb-separator">›</span>
+                <span class="breadcrumb-current">Analyse produits</span>
+            </div>
+            
+            <div class="constat-full">
+                <span class="constat-badge insight">Analyse produits</span>
+                <h2 class="constat-title">Le trafic est ultra-concentré, des pépites sont invisibles</h2>
+                
+                <div class="info-box warning" style="margin-bottom: 2rem;">
+                    <div class="info-box-title">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                        Concentration du trafic
+                    </div>
+                    <span style="color: var(--gray);">Les 3 premiers produits captent <strong>37% du trafic</strong>. Pendant ce temps, 50+ produits ont moins de 10 sessions en 90 jours.</span>
+                </div>
+                
+                <div class="products-grid">
+                    <div class="product-section">
+                        <h4><span class="dot green"></span> Winners — À pousser</h4>
+                        <div class="product-item">
+                            <span class="product-name">Chemise Boy Bleu Carreaux</span>
+                            <span class="product-stat good">2,23% conv.</span>
+                        </div>
+                        <div class="product-item">
+                            <span class="product-name">Bracelet Coquillage</span>
+                            <span class="product-stat good">2,39% conv.</span>
+                        </div>
+                        <div class="product-item">
+                            <span class="product-name">Chemise Boy Denim Bleu</span>
+                            <span class="product-stat good">1,77% conv.</span>
+                        </div>
+                        <div class="product-item">
+                            <span class="product-name">Body Pam Noir</span>
+                            <span class="product-stat good">0,59% (4 719 sessions)</span>
+                        </div>
+                    </div>
+                    
+                    <div class="product-section">
+                        <h4><span class="dot gold"></span> Hidden Gems — À exposer</h4>
+                        <div class="product-item">
+                            <span class="product-name">Manteau Denise Noir</span>
+                            <span class="product-stat good">15,8% conv. (19 sessions)</span>
+                        </div>
+                        <div class="product-item">
+                            <span class="product-name">Pantalon Jim Flower Blanc</span>
+                            <span class="product-stat good">14,3% conv. (7 sessions)</span>
+                        </div>
+                        <div class="product-item">
+                            <span class="product-name">Robe Lou Ivoire</span>
+                            <span class="product-stat good">2,47% conv. (162 sessions)</span>
+                        </div>
+                    </div>
+                    
+                    <div class="product-section">
+                        <h4><span class="dot orange"></span> À optimiser — Fort trafic, faible conversion</h4>
+                        <div class="product-item">
+                            <span class="product-name">Robe Brigitte Cotelé Marine</span>
+                            <span class="product-stat warning">0,41% (3 427 sessions)</span>
+                        </div>
+                        <div class="product-item">
+                            <span class="product-name">Veste Ced Grise</span>
+                            <span class="product-stat warning">0,37% (1 894 sessions)</span>
+                        </div>
+                        <div class="product-item">
+                            <span class="product-name">Jupe Vicky Gris Chiné</span>
+                            <span class="product-stat warning">0,40% (1 734 sessions)</span>
+                        </div>
+                    </div>
+                    
+                    <div class="product-section">
+                        <h4><span class="dot gray"></span> Paradoxe Klyde — À investiguer</h4>
+                        <div class="product-item" style="flex-direction: column; align-items: flex-start;">
+                            <span class="product-name">Collection historiquement top revenue</span>
+                            <span style="font-size: 0.85rem; color: var(--gray); margin-top: 0.3rem;">Mais quasi plus de trafic récent (5-96 sessions). Taux de retour élevés sur certaines variantes. À creuser avec votre connaissance produit.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SHOPIFY RECO -->
+        <section id="shopify-reco" class="slide slide-white" data-section="E-commerce" data-group="shopify">
+            <div class="breadcrumb">
+                <span class="breadcrumb-item">E-commerce</span>
+                <span class="breadcrumb-separator">›</span>
+                <span class="breadcrumb-item">Shopify & CRO</span>
+                <span class="breadcrumb-separator">›</span>
+                <span class="breadcrumb-current">Recommandations</span>
+            </div>
+            
+            <div class="reco-phase-header">
+                <div class="reco-phase-icon">
+                    <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                </div>
+                <div class="reco-phase-info">
+                    <h2>Recommandations Shopify</h2>
+                    <p>Priorisées par impact et effort</p>
+                </div>
+            </div>
+            
+            <div class="reco-list">
+                <div class="reco-item">
+                    <div class="reco-number" style="background: #fde8e8; color: var(--red);">1</div>
+                    <div class="reco-content">
+                        <h4>Stopper/réduire la diffusion hors France</h4>
+                        <p>Tant que le site n'est pas prêt (traductions, checkout, frais). À la limite BE/LU.</p>
+                    </div>
+                    <div class="reco-metric">
+                        <div class="reco-metric-label">Priorité</div>
+                        <div class="reco-metric-value" style="color: var(--red);">Haute</div>
+                    </div>
+                </div>
+                <div class="reco-item">
+                    <div class="reco-number" style="background: #fde8e8; color: var(--red);">2</div>
+                    <div class="reco-content">
+                        <h4>Corriger les traductions EN et les liens morts</h4>
+                        <p>Site bancal en anglais, pages cassées sur la homepage. Freine toute expansion.</p>
+                    </div>
+                    <div class="reco-metric">
+                        <div class="reco-metric-label">Priorité</div>
+                        <div class="reco-metric-value" style="color: var(--red);">Haute</div>
+                    </div>
+                </div>
+                <div class="reco-item">
+                    <div class="reco-number" style="background: #fde8e8; color: var(--red);">3</div>
+                    <div class="reco-content">
+                        <h4>Rationaliser les templates pages produits</h4>
+                        <p>7-8 templates différents, maintenance impossible. Viser 1-2 templates propres max.</p>
+                    </div>
+                    <div class="reco-metric">
+                        <div class="reco-metric-label">Priorité</div>
+                        <div class="reco-metric-value" style="color: var(--red);">Haute</div>
+                    </div>
+                </div>
+                <div class="reco-item">
+                    <div class="reco-number" style="background: #fef3e8; color: var(--orange);">4</div>
+                    <div class="reco-content">
+                        <h4>Désactiver l'app de fidélité Loloyal</h4>
+                        <p>30€/mois facturés mais jamais utilisée. Quick win immédiat.</p>
+                    </div>
+                    <div class="reco-metric">
+                        <div class="reco-metric-label">Priorité</div>
+                        <div class="reco-metric-value" style="color: var(--orange);">Moyenne</div>
+                    </div>
+                </div>
+                <div class="reco-item">
+                    <div class="reco-number" style="background: #fef3e8; color: var(--orange);">5</div>
+                    <div class="reco-content">
+                        <h4>Reprendre le contrôle sur les avis (Trustpilot)</h4>
+                        <p>Note de 2,5/5 visible sur Google. Former les vendeurs boutique, automatiser les demandes d'avis.</p>
+                    </div>
+                    <div class="reco-metric">
+                        <div class="reco-metric-label">Priorité</div>
+                        <div class="reco-metric-value" style="color: var(--orange);">Moyenne</div>
+                    </div>
+                </div>
+                <div class="reco-item">
+                    <div class="reco-number" style="background: var(--cream);">6</div>
+                    <div class="reco-content">
+                        <h4>Mettre en avant les bijoux/accessoires</h4>
+                        <p>Best-sellers avec forte conversion (bracelets 2,4%). Pousser en homepage et collections.</p>
+                    </div>
+                    <div class="reco-metric">
+                        <div class="reco-metric-label">Priorité</div>
+                        <div class="reco-metric-value">Standard</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- KLAVIYO HEADER -->
+        <section id="klaviyo" class="slide slide-dark" data-section="CRM" data-group="klaviyo">
+            <div class="breadcrumb">
+                <span class="breadcrumb-item">CRM & Emailing</span>
+                <span class="breadcrumb-separator">›</span>
+                <span class="breadcrumb-current">Klaviyo</span>
+            </div>
+            
+            <div class="slide-header">
+                <div class="slide-number">03</div>
+                <h1 class="slide-title">Klaviyo</h1>
+                <p class="slide-subtitle" style="color: rgba(255,255,255,0.7);">Un trésor sous-exploité — la base est engagée mais ne convertit pas assez</p>
+            </div>
+            
+            <div class="gauge-container" style="background: rgba(255,255,255,0.05); margin-top: 3rem;">
+                <div class="gauge-header">
+                    <div class="gauge-title" style="color: var(--white);">Part du CA attribuée à Klaviyo</div>
+                    <div class="gauge-values">
+                        <span class="gauge-current">Actuel : ~20%</span>
+                        <span class="gauge-target">Objectif : 30-40%</span>
+                    </div>
+                </div>
+                <div class="gauge-bar" style="background: rgba(255,255,255,0.1);">
+                    <div class="gauge-fill" style="width: 50%;"></div>
+                    <div class="gauge-target-marker" style="left: 75%;"></div>
+                </div>
+                <div class="gauge-legend" style="color: rgba(255,255,255,0.5);">
+                    <span>0%</span>
+                    <span>Potentiel de +50% de revenus CRM</span>
+                    <span>40%</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- KLAVIYO FLOWS -->
+        <section id="klaviyo-flows" class="slide slide-cream" data-section="CRM" data-group="klaviyo">
+            <div class="breadcrumb">
+                <span class="breadcrumb-item">CRM</span>
+                <span class="breadcrumb-separator">›</span>
+                <span class="breadcrumb-item">Klaviyo</span>
+                <span class="breadcrumb-separator">›</span>
+                <span class="breadcrumb-current">Flows automatiques</span>
+            </div>
+            
+            <div class="constat-full">
+                <span class="constat-badge major">À restructurer</span>
+                <h2 class="constat-title">14 flows actifs, mal déclenchés, le Welcome ne rapporte rien</h2>
+                
+                <div class="constat-grid">
+                    <div class="constat-item">
+                        <div class="constat-item-label">Constat</div>
+                        <div class="constat-item-value">Split actuel : 66% newsletters / 33% flows. Le Welcome devrait être un top contributeur mais génère quasi rien — le -10% est envoyé à tout le monde, interférence avec le panier abandonné.</div>
+                    </div>
+                    <div class="constat-item">
+                        <div class="constat-item-label">Problème</div>
+                        <div class="constat-item-value">Flows hors France qui envoient vers des pages mal traduites ou en français. Back in Stock limité à 100 notifications sur Vitals. Aucun A/B testing mené.</div>
+                    </div>
+                    <div class="constat-item">
+                        <div class="constat-item-label">Opportunité</div>
+                        <div class="constat-item-value">Avec un branding aussi fort et une base aussi engagée (65% d'ouverture), les flows devraient générer beaucoup plus. C'est le levier le plus rentable.</div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 2rem;">
+                    <h4 style="margin-bottom: 1rem; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: var(--gold);">Recommandations prioritaires</h4>
+                    <div class="reco-list">
+                        <div class="reco-item">
+                            <div class="reco-number" style="background: #fde8e8; color: var(--red);">1</div>
+                            <div class="reco-content">
+                                <h4>Revoir les triggers du Welcome</h4>
+                                <p>Ne pas envoyer -10% à tous les inscrits. Splitter : un flow avec code (pop-up) / un sans (autres sources).</p>
+                            </div>
+                        </div>
+                        <div class="reco-item">
+                            <div class="reco-number" style="background: #fef3e8; color: var(--orange);">2</div>
+                            <div class="reco-content">
+                                <h4>Passer Back in Stock sur Klaviyo</h4>
+                                <p>Plus de flexibilité, plus de contrôle, possibilité d'opt-in newsletter dans le formulaire.</p>
+                            </div>
+                        </div>
+                        <div class="reco-item">
+                            <div class="reco-number" style="background: var(--cream);">3</div>
+                            <div class="reco-content">
+                                <h4>Ajouter un flow Customer Win-back</h4>
+                                <p>Avec incentive pour réactiver les clients dormants. Ajouter aussi un flow "Désengagés" pour cleaner la base.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- KLAVIYO NEWSLETTERS -->
+        <section id="klaviyo-nl" class="slide slide-white" data-section="CRM" data-group="klaviyo">
+            <div class="breadcrumb">
+                <span class="breadcrumb-item">CRM</span>
+                <span class="breadcrumb-separator">›</span>
+                <span class="breadcrumb-item">Klaviyo</span>
+                <span class="breadcrumb-separator">›</span>
+                <span class="breadcrumb-current">Newsletters</span>
+            </div>
+            
+            <div class="constat-full">
+                <span class="constat-badge success" style="background: var(--green);">Point fort</span>
+                <h2 class="constat-title">Taux d'ouverture excellents — le problème est ailleurs</h2>
+                
+                <div class="metrics-grid" style="grid-template-columns: repeat(3, 1fr);">
+                    <div class="metric-card">
+                        <div class="metric-card-label">Taux d'ouverture</div>
+                        <div class="metric-card-value positive">~65%</div>
+                        <div class="metric-card-context">Excellent</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-card-label">Taux de clic</div>
+                        <div class="metric-card-value positive">Élevé</div>
+                        <div class="metric-card-context">Base engagée</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-card-label">Conversions</div>
+                        <div class="metric-card-value warning">Faibles</div>
+                        <div class="metric-card-context">Problème = site</div>
+                    </div>
+                </div>
+                
+                <div class="info-box insight">
+                    <div class="info-box-title">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                        Diagnostic
+                    </div>
+                    <span style="color: var(--gray);">Les gens ouvrent, cliquent, mais n'achètent pas. Le branding fait son travail, les newsletters sont bien construites — le problème est sur le site qui ne convertit pas ces visiteurs engagés.</span>
+                </div>
+                
+                <div class="info-box warning" style="margin-top: 1rem;">
+                    <div class="info-box-title">
+                        <svg viewBox="0 0 24 24"><path d="M12 9v4M12 17h.01M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>
+                        Process trop lourd
+                    </div>
+                    <span style="color: var(--gray);">Actuellement, 3 newsletters différentes sont envoyées par campagne (FR, EU, UK/US). C'est trop lourd à maintenir. Klaviyo permet la <strong>traduction automatique</strong> — une seule newsletter, traduite à la volée selon la langue du contact.</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- KLAVIYO ACQUISITION -->
+        <section id="klaviyo-acquisition" class="slide slide-cream" data-section="CRM" data-group="klaviyo">
+            <div class="breadcrumb">
+                <span class="breadcrumb-item">CRM</span>
+                <span class="breadcrumb-separator">›</span>
+                <span class="breadcrumb-item">Klaviyo</span>
+                <span class="breadcrumb-separator">›</span>
+                <span class="breadcrumb-current">Acquisition CRM</span>
+            </div>
+            
+            <div class="constat-full">
+                <span class="constat-badge major">À corriger</span>
+                <h2 class="constat-title">Des sources d'inscription cassées ou sous-optimisées</h2>
+                
+                <div class="two-columns">
+                    <div>
+                        <h4 style="margin-bottom: 1rem; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: var(--gray);">Problèmes identifiés</h4>
+                        <div class="product-section" style="margin-bottom: 1rem;">
+                            <div class="product-item" style="flex-direction: column; align-items: flex-start;">
+                                <span class="product-name" style="color: var(--red); font-weight: 600;">Footer newsletter invisible</span>
+                                <span style="font-size: 0.85rem; color: var(--gray);">Le formulaire est actif sur Klaviyo mais n'apparaît plus sur le site.</span>
+                            </div>
+                        </div>
+                        <div class="product-section" style="margin-bottom: 1rem;">
+                            <div class="product-item" style="flex-direction: column; align-items: flex-start;">
+                                <span class="product-name" style="color: var(--orange); font-weight: 600;">Pop-up -10% timide</span>
+                                <span style="font-size: 0.85rem; color: var(--gray);">Pas de teaser pour le rouvrir après fermeture. Pas centré, pas d'image forte.</span>
+                            </div>
+                        </div>
+                        <div class="product-section">
+                            <div class="product-item" style="flex-direction: column; align-items: flex-start;">
+                                <span class="product-name" style="color: var(--orange); font-weight: 600;">Back in Stock externe</span>
+                                <span style="font-size: 0.85rem; color: var(--gray);">Géré via Vitals (limite 100), pas d'opt-in newsletter possible.</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 style="margin-bottom: 1rem; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: var(--gold);">Recommandations</h4>
+                        <div class="reco-list">
+                            <div class="reco-item" style="grid-template-columns: auto 1fr;">
+                                <div class="reco-number" style="background: #fde8e8; color: var(--red);">1</div>
+                                <div class="reco-content">
+                                    <h4>Réactiver le formulaire footer</h4>
+                                    <p>Quick win immédiat, source d'inscription passive.</p>
+                                </div>
+                            </div>
+                            <div class="reco-item" style="grid-template-columns: auto 1fr;">
+                                <div class="reco-number" style="background: #fef3e8; color: var(--orange);">2</div>
+                                <div class="reco-content">
+                                    <h4>Améliorer le pop-up -10%</h4>
+                                    <p>Ajouter un teaser, centrer, mettre une belle image.</p>
+                                </div>
+                            </div>
+                            <div class="reco-item" style="grid-template-columns: auto 1fr;">
+                                <div class="reco-number" style="background: var(--cream);">3</div>
+                                <div class="reco-content">
+                                    <h4>Passer Back in Stock sur Klaviyo</h4>
+                                    <p>Avec case opt-in newsletter dans le formulaire.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- KLAVIYO BASE -->
+        <section id="klaviyo-base" class="slide slide-white" data-section="CRM" data-group="klaviyo">
+            <div class="breadcrumb">
+                <span class="breadcrumb-item">CRM</span>
+                <span class="breadcrumb-separator">›</span>
+                <span class="breadcrumb-item">Klaviyo</span>
+                <span class="breadcrumb-separator">›</span>
+                <span class="breadcrumb-current">Base client</span>
+            </div>
+            
+            <div class="constat-full">
+                <span class="constat-badge structural">À assainir</span>
+                <h2 class="constat-title">14 listes, des segments pour l'Ads mélangés — difficile à lire</h2>
+                
+                <div class="metrics-grid" style="grid-template-columns: repeat(3, 1fr);">
+                    <div class="metric-card">
+                        <div class="metric-card-label">Contacts actifs</div>
+                        <div class="metric-card-value">~6 000</div>
+                        <div class="metric-card-context">Base quali</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-card-label">Listes différentes</div>
+                        <div class="metric-card-value warning">14</div>
+                        <div class="metric-card-context">Trop, mal organisées</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-card-label">Qualité</div>
+                        <div class="metric-card-value positive">Bonne</div>
+                        <div class="metric-card-context">Taux d'engagement élevé</div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 2rem;">
+                    <h4 style="margin-bottom: 1rem; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: var(--gold);">Actions de nettoyage</h4>
+                    <div class="reco-list">
+                        <div class="reco-item" style="grid-template-columns: auto 1fr;">
+                            <div class="reco-number">1</div>
+                            <div class="reco-content">
+                                <h4>Cleaner et archiver les listes/segments inutilisés</h4>
+                                <p>Remettre de l'ordre, supprimer ce qui ne sert plus.</p>
+                            </div>
+                        </div>
+                        <div class="reco-item" style="grid-template-columns: auto 1fr;">
+                            <div class="reco-number">2</div>
+                            <div class="reco-content">
+                                <h4>Créer une liste "à exclure"</h4>
+                                <p>Bounces, spam, unsub, désengagés — pour ne plus leur envoyer.</p>
+                            </div>
+                        </div>
+                        <div class="reco-item" style="grid-template-columns: auto 1fr;">
+                            <div class="reco-number">3</div>
+                            <div class="reco-content">
+                                <h4>Splitter les sources d'inscription</h4>
+                                <p>Pop-up, footer, checkout — pour savoir ce qui fonctionne.</p>
+                            </div>
+                        </div>
+                        <div class="reco-item" style="grid-template-columns: auto 1fr;">
+                            <div class="reco-number">4</div>
+                            <div class="reco-content">
+                                <h4>Désactiver les contacts désengagés</h4>
+                                <p>Réduire la facturation Klaviyo (facturé par contact actif).</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GOOGLE ADS -->
+        <section id="google" class="slide slide-cream" data-section="Acquisition">
+            <div class="breadcrumb">
+                <span class="breadcrumb-item">Acquisition Paid</span>
+                <span class="breadcrumb-separator">›</span>
+                <span class="breadcrumb-current">Google Ads</span>
+            </div>
+            
+            <div class="constat-full">
+                <span class="constat-badge structural">Position</span>
+                <h2 class="constat-title">Google Ads : pas prioritaire</h2>
+                
+                <div class="constat-grid">
+                    <div class="constat-item">
+                        <div class="constat-item-label">Situation actuelle</div>
+                        <div class="constat-item-value">Pas de campagne active. Les campagnes précédentes avaient de bons résultats, mais ce n'est pas la priorité aujourd'hui.</div>
+                    </div>
+                    <div class="constat-item">
+                        <div class="constat-item-label">Pourquoi attendre</div>
+                        <div class="constat-item-value">Stock insuffisant, site pas prêt. Les résultats organiques (SEO) sont suffisants — peu de concurrence sur "Martin Martin Paris".</div>
+                    </div>
+                    <div class="constat-item">
+                        <div class="constat-item-label">À envisager plus tard</div>
+                        <div class="constat-item-value">Performance Max France pour tester Google Shopping. Brand + Brand générique (robes, chemises) — mais après avoir stabilisé le site.</div>
+                    </div>
+                </div>
+                
+                <div class="info-box insight" style="margin-top: 2rem;">
+                    <div class="info-box-title">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                        Logique du CAC blended
+                    </div>
+                    <span style="color: var(--gray);">Même si un canal a un bon ROAS, ça ne veut pas dire qu'il faut l'activer. Si les gens vous auraient trouvé organiquement de toute façon, activer Google Ads augmente votre CAC sans augmenter vos conversions. C'est le piège de l'attribution.</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- META HEADER -->
+        <section id="meta" class="slide slide-dark" data-section="Acquisition" data-group="meta">
+            <div class="breadcrumb">
+                <span class="breadcrumb-item">Acquisition Paid</span>
+                <span class="breadcrumb-separator">›</span>
+                <span class="breadcrumb-current">Meta Ads</span>
+            </div>
+            
+            <div class="slide-header">
+                <div class="slide-number">04</div>
+                <h1 class="slide-title">Meta Ads</h1>
+                <p class="slide-subtitle" style="color: rgba(255,255,255,0.7);">Ça fonctionne grâce au branding — mais la structure est bordélique</p>
+            </div>
+        </section>
+
+        <!-- META STRUCTURE -->
+        <section id="meta-structure" class="slide slide-cream" data-section="Acquisition" data-group="meta">
+            <div class="breadcrumb">
+                <span class="breadcrumb-item">Acquisition</span>
+                <span class="breadcrumb-separator">›</span>
+                <span class="breadcrumb-item">Meta Ads</span>
+                <span class="breadcrumb-separator">›</span>
+                <span class="breadcrumb-current">Structure actuelle</span>
+            </div>
+            
+            <div class="constat-full">
+                <span class="constat-badge major">Risque identifié</span>
+                <h2 class="constat-title">Des résultats corrects malgré une structure illisible</h2>
+                
+                <div class="constat-grid">
+                    <div class="constat-item">
+                        <div class="constat-item-label">Ce qu'on observe</div>
+                        <div class="constat-item-value">Beaucoup de trafic vient de Meta, stats globalement bonnes. Mais la structure est un foutoir : pas de nomenclature, campagnes difficiles à lire pour un externe.</div>
+                    </div>
+                    <div class="constat-item">
+                        <div class="constat-item-label">Le risque</div>
+                        <div class="constat-item-value">Dépendance à une personne. Si le freelance part ou si quelqu'un doit reprendre, c'est impossible à comprendre. Pas d'optimisation possible sans lisibilité.</div>
+                    </div>
+                    <div class="constat-item">
+                        <div class="constat-item-label">Notre interprétation</div>
+                        <div class="constat-item-value">Les résultats viennent du branding fort de la marque, pas de la structure des campagnes. Avec une meilleure organisation, les stats pourraient être encore meilleures.</div>
+                    </div>
+                </div>
+                
+                <div class="info-box warning" style="margin-top: 2rem;">
+                    <div class="info-box-title">
+                        <svg viewBox="0 0 24 24"><path d="M12 9v4M12 17h.01M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>
+                        Problème de nomenclature
+                    </div>
+                    <span style="color: var(--gray);">Les campagnes ont des noms comme "COLD_SUILUX", "Shopping ADV+ FR CBO", etc. Impossible de comprendre rapidement l'objectif, l'audience, le type de campagne. Une nomenclature claire (Objectif_Audience_Type_Pays) est indispensable.</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- META BEST -->
+        <section id="meta-best" class="slide slide-white" data-section="Acquisition" data-group="meta">
+            <div class="breadcrumb">
+                <span class="breadcrumb-item">Acquisition</span>
+                <span class="breadcrumb-separator">›</span>
+                <span class="breadcrumb-item">Meta Ads</span>
+                <span class="breadcrumb-separator">›</span>
+                <span class="breadcrumb-current">Ce qui fonctionne</span>
+            </div>
+            
+            <div class="constat-full">
+                <span class="constat-badge success" style="background: var(--green);">Best performers</span>
+                <h2 class="constat-title">DPA + UGC = la combinaison gagnante</h2>
+                
+                <div class="ads-gallery">
+                    <div class="ads-card">
+                        <div class="ads-card-icon dpa">🛒</div>
+                        <h4>DPA (Carousels auto)</h4>
+                        <p>Les 3-4 meilleures pubs sont des DPA. Pas d'effort créa, les packshots lifestyle font le travail.</p>
+                        <span class="ads-card-tag">Top performer</span>
+                    </div>
+                    <div class="ads-card">
+                        <div class="ads-card-icon photo">📸</div>
+                        <h4>Photos lifestyle</h4>
+                        <p>Vicky jupe back to work, chemise boy, Robe Brigitte. Des photos inspirées qui montrent le produit porté.</p>
+                        <span class="ads-card-tag">Forte conversion</span>
+                    </div>
+                    <div class="ads-card">
+                        <div class="ads-card-icon video">🎬</div>
+                        <h4>Vidéos UGC</h4>
+                        <p>Capucine devant son miroir, vidéo ascenseur. Authentique, on ne voit pas que c'est de la pub.</p>
+                        <span class="ads-card-tag">Engagement élevé</span>
+                    </div>
+                </div>
+                
+                <div class="info-box success" style="margin-top: 1rem;">
+                    <div class="info-box-title">
+                        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                        À continuer
+                    </div>
+                    <span style="color: var(--gray);">Les shootings lifestyle actuels alimentent parfaitement les DPA. Continuer les vidéos UGC style Capucine. Tester des GIF/motion design pour diversifier les formats.</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- META RECO -->
+        <section id="meta-reco" class="slide slide-cream" data-section="Acquisition" data-group="meta">
+            <div class="breadcrumb">
+                <span class="breadcrumb-item">Acquisition</span>
+                <span class="breadcrumb-separator">›</span>
+                <span class="breadcrumb-item">Meta Ads</span>
+                <span class="breadcrumb-separator">›</span>
+                <span class="breadcrumb-current">Recommandations</span>
+            </div>
+            
+            <div class="reco-phase-header">
+                <div class="reco-phase-icon">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+                </div>
+                <div class="reco-phase-info">
+                    <h2>Recommandations Meta</h2>
+                    <p>Rationaliser et sécuriser</p>
+                </div>
+            </div>
+            
+            <div class="reco-list">
+                <div class="reco-item">
+                    <div class="reco-number" style="background: #fde8e8; color: var(--red);">1</div>
+                    <div class="reco-content">
+                        <h4>Stopper la diffusion hors France</h4>
+                        <p>Tant que le site n'est pas prêt. À la limite BE/LU. Les campagnes UK/US envoient vers un site bancal.</p>
+                    </div>
+                    <div class="reco-metric">
+                        <div class="reco-metric-label">Priorité</div>
+                        <div class="reco-metric-value" style="color: var(--red);">Haute</div>
+                    </div>
+                </div>
+                <div class="reco-item">
+                    <div class="reco-number" style="background: #fde8e8; color: var(--red);">2</div>
+                    <div class="reco-content">
+                        <h4>Mettre en place une nomenclature claire</h4>
+                        <p>Objectif_Audience_Type_Pays pour chaque campagne/adset/ad. Indispensable pour la lisibilité et la reprise.</p>
+                    </div>
+                    <div class="reco-metric">
+                        <div class="reco-metric-label">Priorité</div>
+                        <div class="reco-metric-value" style="color: var(--red);">Haute</div>
+                    </div>
+                </div>
+                <div class="reco-item">
+                    <div class="reco-number" style="background: #fef3e8; color: var(--orange);">3</div>
+                    <div class="reco-content">
+                        <h4>Tester la désactivation du retargeting</h4>
+                        <p>Ces gens auraient peut-être converti sans pub. Mesurer l'impact réel sur le CAC blended.</p>
+                    </div>
+                    <div class="reco-metric">
+                        <div class="reco-metric-label">Priorité</div>
+                        <div class="reco-metric-value" style="color: var(--orange);">Moyenne</div>
+                    </div>
+                </div>
+                <div class="reco-item">
+                    <div class="reco-number" style="background: #fef3e8; color: var(--orange);">4</div>
+                    <div class="reco-content">
+                        <h4>Assurer la cohérence pub ↔ stock</h4>
+                        <p>Ne pas promouvoir des produits sold out. Vérifier avant chaque lancement de campagne.</p>
+                    </div>
+                    <div class="reco-metric">
+                        <div class="reco-metric-label">Priorité</div>
+                        <div class="reco-metric-value" style="color: var(--orange);">Moyenne</div>
+                    </div>
+                </div>
+                <div class="reco-item">
+                    <div class="reco-number" style="background: var(--cream);">5</div>
+                    <div class="reco-content">
+                        <h4>Arbitrer les adsets avec ROAS faible</h4>
+                        <p>Certains ensembles de publicités sous-performent. Les identifier et couper ou réallouer.</p>
+                    </div>
+                    <div class="reco-metric">
+                        <div class="reco-metric-label">Priorité</div>
+                        <div class="reco-metric-value">Standard</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- QUICK WINS -->
+        <section id="quickwins" class="slide slide-white" data-section="Plan d'action">
+            <div class="breadcrumb">
+                <span class="breadcrumb-item">Plan d'action</span>
+                <span class="breadcrumb-separator">›</span>
+                <span class="breadcrumb-current">Quick wins</span>
+            </div>
+            
+            <div class="reco-phase-header">
+                <div class="reco-phase-icon">
+                    <svg viewBox="0 0 24 24"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09zM12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
+                </div>
+                <div class="reco-phase-info">
+                    <h2>Quick Wins</h2>
+                    <p>Actions immédiates — Impact rapide, effort faible</p>
+                </div>
+            </div>
+            
+            <div class="reco-list">
+                <div class="reco-item">
+                    <div class="reco-number">1</div>
+                    <div class="reco-content">
+                        <h4>Désactiver l'app de fidélité Loloyal</h4>
+                        <p>30€/mois économisés immédiatement. Non utilisée.</p>
+                    </div>
+                    <div class="reco-metric">
+                        <div class="reco-metric-label">Sujet</div>
+                        <div class="reco-metric-value">Shopify</div>
+                    </div>
+                </div>
+                <div class="reco-item">
+                    <div class="reco-number">2</div>
+                    <div class="reco-content">
+                        <h4>Réactiver le formulaire newsletter footer</h4>
+                        <p>Actif sur Klaviyo mais invisible sur le site. 5 minutes de fix.</p>
+                    </div>
+                    <div class="reco-metric">
+                        <div class="reco-metric-label">Sujet</div>
+                        <div class="reco-metric-value">Klaviyo</div>
+                    </div>
+                </div>
+                <div class="reco-item">
+                    <div class="reco-number">3</div>
+                    <div class="reco-content">
+                        <h4>Stopper les campagnes hors France</h4>
+                        <p>Sur Meta notamment. Budget économisé, meilleur ROAS global.</p>
+                    </div>
+                    <div class="reco-metric">
+                        <div class="reco-metric-label">Sujet</div>
+                        <div class="reco-metric-value">Meta</div>
+                    </div>
+                </div>
+                <div class="reco-item">
+                    <div class="reco-number">4</div>
+                    <div class="reco-content">
+                        <h4>Corriger le sélecteur langue/currency en double</h4>
+                        <p>Bug visuel, mauvaise expérience utilisateur. Supprimer le doublon.</p>
+                    </div>
+                    <div class="reco-metric">
+                        <div class="reco-metric-label">Sujet</div>
+                        <div class="reco-metric-value">Shopify</div>
+                    </div>
+                </div>
+                <div class="reco-item">
+                    <div class="reco-number">5</div>
+                    <div class="reco-content">
+                        <h4>Réactiver le clic droit sur le site</h4>
+                        <p>Frustrant pour les utilisateurs, pas de protection réelle. À enlever.</p>
+                    </div>
+                    <div class="reco-metric">
+                        <div class="reco-metric-label">Sujet</div>
+                        <div class="reco-metric-value">Shopify</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CHANTIERS STRUCTURANTS -->
+        <section id="structurant" class="slide slide-cream" data-section="Plan d'action">
+            <div class="breadcrumb">
+                <span class="breadcrumb-item">Plan d'action</span>
+                <span class="breadcrumb-separator">›</span>
+                <span class="breadcrumb-current">Chantiers structurants</span>
+            </div>
+            
+            <div class="reco-phase-header">
+                <div class="reco-phase-icon">
+                    <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                </div>
+                <div class="reco-phase-info">
+                    <h2>Chantiers structurants</h2>
+                    <p>1-3 mois — Impact fort, effort moyen à élevé</p>
+                </div>
+            </div>
+            
+            <div class="reco-list">
+                <div class="reco-item">
+                    <div class="reco-number">1</div>
+                    <div class="reco-content">
+                        <h4>Refonte des traductions EN + correction liens morts</h4>
+                        <p>Préalable indispensable à toute expansion internationale.</p>
+                    </div>
+                    <div class="reco-metric">
+                        <div class="reco-metric-label">Sujet</div>
+                        <div class="reco-metric-value">Shopify</div>
+                    </div>
+                </div>
+                <div class="reco-item">
+                    <div class="reco-number">2</div>
+                    <div class="reco-content">
+                        <h4>Rationaliser les templates pages produits</h4>
+                        <p>Passer de 7-8 à 1-2 templates propres. Facilite la maintenance.</p>
+                    </div>
+                    <div class="reco-metric">
+                        <div class="reco-metric-label">Sujet</div>
+                        <div class="reco-metric-value">Shopify</div>
+                    </div>
+                </div>
+                <div class="reco-item">
+                    <div class="reco-number">3</div>
+                    <div class="reco-content">
+                        <h4>Restructurer les flows Klaviyo</h4>
+                        <p>Welcome, Panier abandonné, Back in Stock sur Klaviyo. Objectif : +50% de revenus CRM.</p>
+                    </div>
+                    <div class="reco-metric">
+                        <div class="reco-metric-label">Sujet</div>
+                        <div class="reco-metric-value">Klaviyo</div>
+                    </div>
+                </div>
+                <div class="reco-item">
+                    <div class="reco-number">4</div>
+                    <div class="reco-content">
+                        <h4>Cleaner et réorganiser la base Klaviyo</h4>
+                        <p>Archiver les listes inutiles, splitter les sources, exclure les désengagés.</p>
+                    </div>
+                    <div class="reco-metric">
+                        <div class="reco-metric-label">Sujet</div>
+                        <div class="reco-metric-value">Klaviyo</div>
+                    </div>
+                </div>
+                <div class="reco-item">
+                    <div class="reco-number">5</div>
+                    <div class="reco-content">
+                        <h4>Mettre en place une nomenclature Meta</h4>
+                        <p>Et restructurer les campagnes pour lisibilité et reprenabilité.</p>
+                    </div>
+                    <div class="reco-metric">
+                        <div class="reco-metric-label">Sujet</div>
+                        <div class="reco-metric-value">Meta</div>
+                    </div>
+                </div>
+                <div class="reco-item">
+                    <div class="reco-number">6</div>
+                    <div class="reco-content">
+                        <h4>Formation équipe à Sidekick (IA Shopify)</h4>
+                        <p>Outil auquel ils ont accès. Permet de faire leurs propres analyses.</p>
+                    </div>
+                    <div class="reco-metric">
+                        <div class="reco-metric-label">Sujet</div>
+                        <div class="reco-metric-value">Formation</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CLOSING -->
+        <section id="closing" class="slide slide-dark closing-slide" data-section="Conclusion">
+            <p class="closing-quote">
+                "Le branding de Martin Martin est <em>votre meilleur atout</em>. Vos clients sont engagés, votre image est forte.<br><br>
+                Mais l'exécution digitale disperse les efforts. Trop de pays, trop de flows, pas assez de stock, pas assez de structure.<br><br>
+                La priorité : <em>rationaliser avant de scaler</em>. Focus France, site solide, CRM qui convertit.<br>
+                Ensuite seulement, vous pourrez accélérer."
+            </p>
+            <p class="closing-cta">Prochaine étape : définir les priorités ensemble</p>
+        </section>
+
+    </main>
+
+    <!-- Keyboard hint -->
+    <div class="keyboard-hint">
+        <span><kbd>↑</kbd> <kbd>↓</kbd> naviguer</span>
+    </div>
+
+    <script>
+        // Toggle accordion menu
+        function toggleNavGroup(groupName) {
+            const allGroups = document.querySelectorAll('.nav-group');
+            const targetGroup = document.querySelector(`.nav-group[data-group="${groupName}"]`);
+            
+            // Close all other groups
+            allGroups.forEach(group => {
+                if (group.dataset.group !== groupName) {
+                    group.classList.remove('expanded');
+                }
+            });
+            
+            // Toggle target group
+            targetGroup.classList.toggle('expanded');
+        }
+
+        // Auto-expand menu based on current section
+        function expandNavForSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section && section.dataset.group) {
+                const groupName = section.dataset.group;
+                const allGroups = document.querySelectorAll('.nav-group');
+                
+                allGroups.forEach(group => {
+                    if (group.dataset.group === groupName) {
+                        group.classList.add('expanded');
+                    } else {
+                        group.classList.remove('expanded');
+                    }
+                });
+            }
+        }
+
+        // Update progress bar
+        function updateProgress() {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = (scrollTop / docHeight) * 100;
+            document.getElementById('progressFill').style.width = progress + '%';
+        }
+
+        // Update active nav item
+        function updateActiveNav() {
+            const sections = document.querySelectorAll('section[id]');
+            const navItems = document.querySelectorAll('.nav-item, .nav-child');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 150;
+                const sectionHeight = section.offsetHeight;
+                if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            // Update nav items
+            navItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('href') === '#' + current) {
+                    item.classList.add('active');
+                }
+            });
+
+            // Update parent active state
+            document.querySelectorAll('.nav-parent').forEach(parent => {
+                parent.classList.remove('active');
+            });
+
+            const currentSection = document.getElementById(current);
+            if (currentSection && currentSection.dataset.group) {
+                const groupName = currentSection.dataset.group;
+                const parentNav = document.querySelector(`.nav-group[data-group="${groupName}"] .nav-parent`);
+                if (parentNav) {
+                    parentNav.classList.add('active');
+                }
+                expandNavForSection(current);
+            }
+        }
+
+        // Scroll events
+        window.addEventListener('scroll', () => {
+            updateProgress();
+            updateActiveNav();
+        });
+
+        // Smooth scroll for nav
+        document.querySelectorAll('.nav-item, .nav-child').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const target = document.querySelector(targetId);
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            const sections = document.querySelectorAll('section[id]');
+            const sectionsArray = Array.from(sections);
+            
+            // Find current section
+            let currentIndex = 0;
+            sectionsArray.forEach((section, index) => {
+                if (window.scrollY >= section.offsetTop - 150) {
+                    currentIndex = index;
+                }
+            });
+
+            if (e.key === 'ArrowDown' || e.key === 'PageDown') {
+                e.preventDefault();
+                if (currentIndex < sectionsArray.length - 1) {
+                    sectionsArray[currentIndex + 1].scrollIntoView({ behavior: 'smooth' });
+                }
+            } else if (e.key === 'ArrowUp' || e.key === 'PageUp') {
+                e.preventDefault();
+                if (currentIndex > 0) {
+                    sectionsArray[currentIndex - 1].scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        });
+
+        // Initial state
+        updateProgress();
+        updateActiveNav();
+    </script>
+</body>
+</html>
